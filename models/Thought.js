@@ -20,7 +20,7 @@ const thoughtSchema = new Schema(
         // how do i connect this to the user that created the thought
         // not sure if syntax is correct
         username: {
-            type: mongoose.Schema.Types.String,
+            type: Schema.Types.String,
             required: true,
             ref: 'User',
         },

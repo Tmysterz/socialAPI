@@ -15,11 +15,11 @@ const userSchema = new Schema(
             match: /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
         },
         thoughts: [{
-            type: mongoose.Schema.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Thought',
         }],
         friends: [{
-            type: mongoose.Scehma.Types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'User'
         }],
     },

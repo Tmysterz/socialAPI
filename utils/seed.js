@@ -21,29 +21,48 @@ connection.once('open', async () => {
 
     // Create empty array to hold the users
     const users = [];
+    const thoughts = [];
 
     // Loop 20 times -- add users and required user info to the users array
     
     // not sure if this will work yet because of how the user model is constructed
+    // my thoughts and friends fields arnt showing up
 
     for (let i = 0; i < 20; i++) {
         // Get some random thoughts objects using a helper function that we imported from ./data
-        const thoughts = getRandomThought(20);
 
-        const fullUserName = getRandomUser
-        const first = fullUserName.split(' ')[0];
-        const last = fullUserName.split(' ')[1];
+        const username = getRandomUser();
         const email = getRandomEmail();
 
         users.push({
-            first,
-            last,
+            username,
             email,
-            thoughts,
         });
     }
 
+    // do i need to push a username to? since it is a required field in my thought model
+    for (let i = 0; i < 20;  i++) {
 
+        const thoughtText = getRandomThought(20);
+        const reactions = getRandomReaction(20);
 
+        thoughts.push({
+            thoughtText,
+            reactions,
+        })
+    }
+
+    // add users to the collection and await the results
+
+    const userData = await User.insertMany(users);
+
+    await Thought.collection.insertOne({
+        username: [...userData.map(({_id}) => _id)],
+    })
+
+    console.table(users);
+    console.table(thoughts);
+    console.info('Seeding Complete');
+    process.exit(0);
 
 })

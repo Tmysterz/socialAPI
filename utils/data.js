@@ -112,7 +112,7 @@ const reactionText = [
 const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // Gets a random user
-const getRandomUser = () => `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
+const getRandomUser = () => `${getRandomArrItem(users)} ${getRandomArrItem(users)}`;
 
 // Function to generate random thoughts that we can add to user object.
 const getRandomThought = (int) => {
@@ -120,28 +120,29 @@ const getRandomThought = (int) => {
     for (let i = 0; i < int; i++) {
         results.push({
             thoughtText: getRandomArrItem(thoughtText),
-            username: getRandomUser(),
         });
     }
     return results;
 };
 
 const getRandomEmail = () => {
-    const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
     let email = '';
 
     for (let i = 0; i < 10; i++) {
         const randomIndex = Math.floor(Math.random() * chars.length);
-        email += '@gmail.com'
-
-        return email;
+        email += chars[randomIndex];
     }
+
+    email += '@gmail.com';
+
+    return email;
 }
 
 const getRandomReaction = (int) => {
     const results = [];
     for (let i = 0; i < int; i++) {
-        result.push({
+        results.push({
             reactionBody: getRandomArrItem(reactionText),
             username: getRandomUser(),
         });
