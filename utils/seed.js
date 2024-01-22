@@ -62,7 +62,7 @@ connection.once('open', async () => {
 
     console.table(users);
     console.table(thoughts);
-    console.info('Seeding Complete');
+    console.info('Seeding Complete!');
     process.exit(0);
 
 })
