@@ -8,20 +8,20 @@ const reactionSchema = new Schema(
         },
         reactionBody: {
             type: String,
-            required: [true, 'Must have a reaction'],
+            // required: [true, 'Must have a reaction'],
             maxLength: 280,
         },
         username: {
             type: String,
-            required: [true, 'Must have a username']
+            // required: [true, 'Must have a username']
         },
         createdAt: {
             type: Date,
             default: Date.now(),
-            get: function () {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                return this.createdAt.toLocaleDateString(undefined, options)
-            },
+            // get: function () {
+            //     const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            //     return this.createdAt.toLocaleDateString(undefined, options)
+            // },
         },
     },
     {

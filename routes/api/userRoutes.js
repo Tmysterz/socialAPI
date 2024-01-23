@@ -5,26 +5,29 @@ const {
     getSingleUser,
     createUser,
     deleteUser,
-    addThoughtToUser,
-    removeThoughtFromUser,
+    updateUser,
+    addFriend,
+    removeFriend
 } = require('../../controllers/userController');
 
+// all routes are working
 // /api/users
+
 router.route('/').get(getUsers).post(createUser);
 
+// all routes work correctly
 // /api/users/:userId
 
-router.route('/:userId').get(getSingleUser).delete(deleteUser);
+router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);
 
-// /api/users/:userId/thoughts
+// api/users/:userId/friends
 
-router.route('/:userId/thoughts').post(addThoughtToUser);
+// route not working for either
 
-// api/users/:userId/thoughts/:thoughtId
+router.route('/:userId/friends').post(addFriend)
 
-router.route('/:userId/thoughts/:thoughtId').delete(removeThoughtFromUser);
+// api/users/:userId/friends/:friendId
+
+router.route('/:userId/friends/:friendId').delete(removeFriend);
 
 module.exports = router;
-
-
-// NEED TO ADD MORE ROUTES FOR USERS REACTIONS

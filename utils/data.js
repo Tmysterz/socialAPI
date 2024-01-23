@@ -25,7 +25,6 @@ const users = [
     'Smith',
     'Jones',
     'Coollastname',
-    'enter_name_here',
     'Ze',
     'Zechariah',
     'Zeek',
@@ -122,6 +121,7 @@ const getRandomThought = (int) => {
             thoughtText: getRandomArrItem(thoughtText),
         });
     }
+    
     return results;
 };
 
