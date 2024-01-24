@@ -50,4 +50,12 @@
   if you have any questions about the repo, Please feel free to open a issue or contact me directly at terrencemccarthysnkrs@gmail.com
   You can find more of my work at https://github.com/Tmysterz
 
+  ## Walkthrough Video
+
+  https://drive.google.com/file/d/1AVK0XfR_-NGpRbY4V1eLGgrYa0u-Xys8/view
+
+  ## Github URL
+
+  https://github.com/Tmysterz/socialAPI
+
 
