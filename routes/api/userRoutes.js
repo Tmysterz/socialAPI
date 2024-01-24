@@ -15,7 +15,7 @@ const {
 
 router.route('/').get(getUsers).post(createUser);
 
-// all routes work correctly
+// all routes work are working
 // /api/users/:userId
 
 router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);

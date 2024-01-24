@@ -12,10 +12,6 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now(),
-            // get: function () {
-            //     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            //     return this.createdAt.toLocaleDateString(undefined, options)
-            // },
         },
         username: {
             type: String,
