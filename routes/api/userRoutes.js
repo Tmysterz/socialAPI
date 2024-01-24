@@ -21,9 +21,7 @@ router.route('/').get(getUsers).post(createUser);
 router.route('/:userId').get(getSingleUser).delete(deleteUser).put(updateUser);
 
 // api/users/:userId/friends
-
-// route not working for either
-
+// route is working
 router.route('/:userId/friends').post(addFriend)
 
 // api/users/:userId/friends/:friendId
